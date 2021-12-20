@@ -2,7 +2,7 @@
 
 data = open('input2.txt', 'r')
 
-# convert the file to the list "nums" line by line
+# convert the file to the list "data" line by line
 data = data.readlines()
 
 # list with all commands
