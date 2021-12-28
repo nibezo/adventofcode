@@ -13,3 +13,6 @@ for i in range(len(data)):
 max_x, max_y = np.amax(x1x2), np.amax(y1y2)
 for i in range(int(len(x1x2)/2)):
     matrix.append([])
+print(max_y)
+m = np.zeros(max_x, max_y)
+print(m[1])
