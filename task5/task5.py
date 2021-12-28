@@ -1,15 +1,15 @@
 # https://adventofcode.com/2021/day/5
+import numpy as np
+
 data = open('input5.txt', 'r').readlines()
-lines = {}
-
-# make a list from data in a format [[x, y] [x1, y1] ... ]
+x1x2, y1y2, matrix = [], [], []
 for i in range(len(data)):
-    data[i] = data[i].replace(" -> ", ' ')
-    data[i] = data[i].replace("\n", '')
-    data[i] = data[i].replace(",", '.')
-    data[i] = list(data[i].split(" "))
-
-for i in range(len(data)):
-    for k in range(1):
-        lines[float(data[i][k])] = float(data[i][k+1])
-
+    x1x2.append(int(data[i][0:data[i].find(',')]))
+    x1x2.append(int(data[i][data[i].find(',')+1:data[i].find(' ')]))
+    data[i] = data[i][data[i].find('>')+2:len(data)]
+    data[i] = data[i].replace('\n', '')
+    y1y2.append(int(data[i][0:data[i].find(',')]))
+    y1y2.append(int(data[i][data[i].find(',')+1:len(data[i])]))
+max_x, max_y = np.amax(x1x2), np.amax(y1y2)
+for i in range(int(len(x1x2)/2)):
+    matrix.append([])
