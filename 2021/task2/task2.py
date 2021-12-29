@@ -14,11 +14,11 @@ for line in data:
     commands.append(line.strip())
 
 for command in commands:
-    if command[0:4] == "down":
+    if command.startswith("down"):
         depth += int(command[-1])
-    elif command[0:2] == "up":
+    elif command.startswith("up"):
         depth -= int(command[-1])
-    elif command[0:7] == "forward":
+    elif command.startswith("forward"):
         horizontal_position += int(command[-1])
 
 print(f"Result is {horizontal_position * depth}")
