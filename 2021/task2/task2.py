@@ -1,10 +1,10 @@
 # https://adventofcode.com/2021/day/2
 
-data = open('input2.txt', 'r')
+f = open('input2.txt', 'r')
 
 # convert the file to the list "data" line by line
-data = data.readlines()
-
+data = f.readlines()
+f.close()
 # list with all commands
 commands = []
 horizontal_position, depth = 0, 0
@@ -22,3 +22,4 @@ for command in commands:
         horizontal_position += int(command[-1])
 
 print(f"Result is {horizontal_position * depth}")
+
